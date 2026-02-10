@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hambúrgueres</title>
+  <link rel="icon" type="image/x-icon" href="./assets/burger.png" />
+  <link rel="stylesheet" href="hamburguer.css" />
+</head>
+
+<body>
+  <a href="./menu.html">
+    <img src="./assets/arrow_back.svg" alt="Início" id="home" />
+  </a>
+
+  <h1 id="MilkshakeTitle">Hambúrgueres na Brasa</h1>
+
+  <div class="container">
+    <h2>Escolha seu hambúrguer</h2>
+
+    <!-- BRASA RAIZ -->
+    <label class="checkbox-btn">
+      <input type="checkbox" />
+      <div class="label-content">
+        <span>Brasa Raiz</span>
+        <p class="description">
+          Pão selado na manteiga, hambúrguer de carne 180g assado na brasa,
+          com queijo muçarela e uma deliciosa maionese de alho.
+        </p>
+
+        <div class="quantity-control">
+          <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+          <span>0</span>
+          <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+        </div>
+
+        <span class="price">R$ 25,00</span>
+      </div>
+    </label>
+
+
+    <!-- BRASA VERDE -->
+    <label class="checkbox-btn">
+      <input type="checkbox" />
+      <div class="label-content">
+        <span>Brasa Verde</span>
+        <p class="description">
+          Pão selado na manteiga, hambúrguer de carne 180g assado na brasa,
+          queijo muçarela, uma deliciosa maionese verde, alface americana crocante,
+          tomate, rodelas de cebola roxa e picles.
+        </p>
+
+        <div class="quantity-control">
+          <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+          <span>0</span>
+          <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+        </div>
+
+        <span class="price">R$ 26,00</span>
+      </div>
+    </label>
+
+
+    <!-- BRASA CREMOSO -->
+    <label class="checkbox-btn">
+      <input type="checkbox" />
+      <div class="label-content">
+        <span>Brasa Cremoso</span>
+        <p class="description">
+          Pão selado na manteiga, hambúrguer de carne 180g assado na brasa,
+          generosa camada de cheddar cremoso catupiry e cebola caramelizada.
+        </p>
+
+        <div class="quantity-control">
+          <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+          <span>0</span>
+          <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+        </div>
+
+        <span class="price">R$ 28,00</span>
+      </div>
+    </label>
+
+
+    <!-- BRASA CROCANTE -->
+    <label class="checkbox-btn">
+      <input type="checkbox" />
+      <div class="label-content">
+        <span>Brasa Crocante</span>
+        <p class="description">
+          Pão selado na manteiga, hambúrguer de carne 180g assado na brasa,
+          queijo muçarela, maionese de alho e anéis de cebola empanados
+          e crocantes.
+        </p>
+
+        <div class="quantity-control">
+          <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+          <span>0</span>
+          <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+        </div>
+
+        <span class="price">R$ 28,00</span>
+      </div>
+    </label>
+
+
+    <!-- BRASA VARGEM -->
+    <label class="checkbox-btn">
+      <input type="checkbox" />
+      <div class="label-content">
+        <span>Brasa Vargem</span>
+        <p class="description">
+          Pão selado na manteiga, hambúrguer de carne 180g assado na brasa,
+          queijo muçarela, maionese de alho, fatias de bacon e cebola roxa.
+        </p>
+
+        <div class="quantity-control">
+          <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+          <span>0</span>
+          <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+        </div>
+
+        <span class="price">R$ 29,00</span>
+      </div>
+    </label>
+
+    <!-- BRASA GALPÃO -->
+    <label class="checkbox-btn">
+      <input type="checkbox" />
+      <div class="label-content">
+        <span>Brasa Galpão</span>
+        <p class="description">
+          Pão selado na manteiga, hambúrguer de carne 180g assado na brasa,
+          queijo muçarela, maionese de alho, rodelas de calabresa e cebola roxa.
+        </p>
+
+        <div class="quantity-control">
+          <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+          <span>0</span>
+          <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+        </div>
+
+        <span class="price">R$ 29,00</span>
+      </div>
+    </label>
+    
+    <!--I's Crispy -->
+    <label class="checkbox-btn">
+      <input type="checkbox" />
+      <div class="label-content">
+        <span>Crispy</span>
+        <p class="description">
+          Pão selado na manteiga, peito de frango empanado e frito,
+          maionese, alface, tomate e cebola roxa.
+        </p>
+
+        <div class="quantity-control">
+          <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+          <span>0</span>
+          <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+        </div>
+
+        <span class="price">R$ 30,00</span>
+      </div>
+    </label>
+
+
+    <!-- I'S ROCK -->
+    <label class="checkbox-btn">
+      <input type="checkbox" />
+      <div class="label-content">
+        <span>Rock</span>
+        <p class="description">
+          Pão selado na manteiga, 100g de catupiry original empanado e frito,
+          hambúrguer de carne 180g assado na brasa, maionese de alho,
+          geleia de pimenta agridoce, alface e tomate.
+        </p>
+
+        <div class="quantity-control">
+          <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+          <span>0</span>
+          <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+        </div>
+
+        <span class="price">R$ 37,00</span>
+      </div>
+    </label>
+
+
+    <button class="btn-carrinho" onclick="adicionarCarrinho()">
+      🛒 Adicionar ao Carrinho
+    </button>
+  </div>
+
+  <script>
+    function changeQuantity(button, amount) {
+      let span = button.parentElement.querySelector("span");
+      let value = parseInt(span.textContent) + amount;
+      if (value < 0) value = 0;
+      span.textContent = value;
+    }
+
+    window.onload = function () {
+      atualizarBadgeCarrinho();
+
+      let editIndex = localStorage.getItem("editarIndex");
+      if (editIndex !== null) {
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        let item = carrinho[editIndex];
+
+        if (item && item.produto === "Hambúrguer") {
+          document.querySelectorAll(".checkbox-btn").forEach((burger) => {
+            let nome = burger.querySelector(".label-content span").textContent;
+            if (item.nome === nome) {
+              burger.querySelector(".quantity-control span").textContent =
+                item.quantidade;
+            }
+          });
+
+          document.querySelector(".btn-carrinho").textContent =
+            "Salvar Alterações";
+        }
+      }
+    };
+
+    function adicionarCarrinho() {
+      let burgers = document.querySelectorAll(".checkbox-btn");
+      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+      let editIndex = localStorage.getItem("editarIndex");
+
+      if (editIndex !== null) {
+        carrinho.splice(editIndex, 1);
+        localStorage.removeItem("editarIndex");
+      }
+
+      burgers.forEach((burger) => {
+        let quantidade = parseInt(
+          burger.querySelector(".quantity-control span").textContent
+        );
+        let nome = burger.querySelector(".label-content span").textContent;
+        let precoTexto = burger
+          .querySelector(".price")
+          .textContent.replace("R$", "")
+          .replace(",", ".")
+          .trim();
+        let preco = parseFloat(precoTexto);
+
+        if (quantidade > 0) {
+          carrinho.push({
+            produto: "Hambúrguer",
+            nome: nome,
+            quantidade: quantidade,
+            preco: preco,
+            subtotal: quantidade * preco,
+          });
+        }
+      });
+
+      localStorage.setItem("carrinho", JSON.stringify(carrinho));
+      window.location.href = "carrinho.html";
+    }
+  </script>
+
+  <script src="utils.js"></script>
+</body>
+</html>

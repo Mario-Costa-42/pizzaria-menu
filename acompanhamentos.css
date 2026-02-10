@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0f0f0f;
+  font-family: Arial, sans-serif;
+  color: #e0e0e0;
+}
+
+#home {
+  width: 30px;
+  margin: 10px;
+}
+
+.container {
+  max-width: 380px;
+  margin: 20px auto 40px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #141414;
+  border: 2px solid #333;
+}
+
+.section-title {
+  text-align: center;
+  color: #d4af37;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.intro {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #cfcfcf;
+  margin-bottom: 12px;
+}
+
+.intro.destaque {
+  color: #fff;
+  font-weight: bold;
+}
+
+.free-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1f1f1f;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 18px 0;
+  font-weight: bold;
+  color: #d4af37;
+}
+
+.free-item .icon {
+  font-size: 1.4rem;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+.item-price {
+  background: #d4af37;
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.item-desc {
+  display: block;
+  font-size: 0.8rem;
+  color: #bdbdbd;
+  margin: 6px 0;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-control button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.quantity-control span {
+  min-width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn-carrinho {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  background: darkgreen;
+  border: 2px solid #000;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
