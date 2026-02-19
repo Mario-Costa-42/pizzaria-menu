@@ -1,2 +1,2 @@
-# Burger-Menu
- An online menu for a snack bar
+# pizzaria-Menu
+ An online menu for a pizzaria
