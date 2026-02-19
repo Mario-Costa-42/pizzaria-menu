@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizzas</title>
+  <link rel="icon" type="image/x-icon" href="./assets/pizza.png">
+  <link rel="stylesheet" href="pizzas.css" />
+</head>
+
+<body>
+  <a href="./menu.html">
+    <img src="./assets/arrow_back.svg" alt="Início" id="home" />
+  </a>
+
+  <h1 id="MilkshakeTitle">Pizzas</h1>
+
+  <div class="container">
+
+    <div class="pizza-item" data-base-price="29.90">
+      <div class="label-content">
+        <span class="pizza-name">Margherita</span>
+        <p class="description">Molho de tomate, mussarela, tomate e manjericão.</p>
+        
+        <select class="size-select" onchange="updatePrice(this)">
+          <option value="Pequena" data-price="29.90">Pequena - R$ 29,90</option>
+          <option value="Média" data-price="39.90">Média - R$ 39,90</option>
+          <option value="Grande" data-price="49.90">Grande - R$ 49,90</option>
+        </select>
+
+        <div class="controls-row">
+          <div class="quantity-control">
+            <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+            <span>0</span>
+            <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+          </div>
+        </div>
+
+        <span class="price">R$ 29,90</span>
+      </div>
+    </div>
+
+    <div class="pizza-item" data-base-price="29.90">
+      <div class="label-content">
+        <span class="pizza-name">Muçarela</span>
+        <p class="description">Molho de tomate, queijo muçarela e orégano.</p>
+
+        <select class="size-select" onchange="updatePrice(this)">
+          <option value="Pequena" data-price="29.90">Pequena - R$ 29,90</option>
+          <option value="Média" data-price="39.90">Média - R$ 39,90</option>
+          <option value="Grande" data-price="49.90">Grande - R$ 49,90</option>
+        </select>
+
+        <div class="controls-row">
+          <div class="quantity-control">
+            <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+            <span>0</span>
+            <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+          </div>
+        </div>
+
+        <span class="price">R$ 29,90</span>
+      </div>
+    </div>
+
+    <div class="pizza-item" data-base-price="31.90">
+      <div class="label-content">
+        <span class="pizza-name">Calabresa</span>
+        <p class="description">Molho de tomate, mussarela, calabresa fatiada e cebola.</p>
+        
+        <select class="size-select" onchange="updatePrice(this)">
+          <option value="Pequena" data-price="31.90">Pequena - R$ 31,90</option>
+          <option value="Média" data-price="41.90">Média - R$ 41,90</option>
+          <option value="Grande" data-price="51.90">Grande - R$ 51,90</option>
+        </select>
+
+        <div class="controls-row">
+          <div class="quantity-control">
+            <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+            <span>0</span>
+            <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+          </div>
+        </div>
+
+        <span class="price">R$ 31,90</span>
+      </div>
+    </div>
+
+    <div class="pizza-item" data-base-price="31.90">
+      <div class="label-content">
+        <span class="pizza-name">Portuguesa</span>
+        <p class="description">Presunto, ovos, cebola, azeitona, ervilha e muçarela.</p>
+
+        <select class="size-select" onchange="updatePrice(this)">
+          <option value="Pequena" data-price="31.90">Pequena - R$ 31,90</option>
+          <option value="Média" data-price="41.90">Média - R$ 41,90</option>
+          <option value="Grande" data-price="51.90">Grande - R$ 51,90</option>
+        </select>
+
+        <div class="controls-row">
+          <div class="quantity-control">
+            <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+            <span>0</span>
+            <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+          </div>
+        </div>
+
+        <span class="price">R$ 31,90</span>
+      </div>
+    </div>
+
+    <div class="pizza-item" data-base-price="31.90">
+      <div class="label-content">
+        <span class="pizza-name">Frango com Catupiry</span>
+        <p class="description">Molho de tomate, mussarela, frango desfiado e catupiry.</p>
+        
+        <select class="size-select" onchange="updatePrice(this)">
+          <option value="Pequena" data-price="31.90">Pequena - R$ 31,90</option>
+          <option value="Média" data-price="44.90">Média - R$ 44,90</option>
+          <option value="Grande" data-price="54.90">Grande - R$ 54,90</option>
+        </select>
+
+        <div class="controls-row">
+          <div class="quantity-control">
+            <button type="button" onclick="changeQuantity(this, -1)">➖</button>
+            <span>0</span>
+            <button type="button" onclick="changeQuantity(this, 1)">➕</button>
+          </div>
+        </div>
+
+        <span class="price">R$ 31,90</span>
+      </div>
+    </div>
+
+    <button class="btn-carrinho" onclick="adicionarCarrinho()">
+      🛒 Adicionar ao Carrinho
+    </button>
+  </div>
+
+  <script>
+    function getCarrinho() {
+      return JSON.parse(localStorage.getItem("carrinho")) || [];
+    }
+
+    window.onload = function () {
+    atualizarBadgeCarrinho();
+
+    let editIndex = localStorage.getItem("editarIndex");
+    if (editIndex === null) return;
+
+    let carrinho = getCarrinho();
+    let item = carrinho[editIndex];
+    if (!item || item.produto !== "Pizza") return;
+
+    document.querySelectorAll(".pizza-item").forEach((pizza) => {
+      let nomeElement = pizza.querySelector(".pizza-name");
+      let select = pizza.querySelector(".size-select");
+      let quantitySpan = pizza.querySelector(".quantity-control span");
+
+      if (!nomeElement || !select || !quantitySpan) return;
+
+      if (nomeElement.textContent.trim() === item.nome.trim()) {
+        select.value = item.tamanho;
+        quantitySpan.textContent = item.quantidade;
+        updatePrice(select);
+      }
+    });
+
+    document.querySelector(".btn-carrinho").textContent =
+      "Salvar Alterações";
+  };
+
+
+    // Atualiza o texto do preço quando o tamanho muda
+    function updatePrice(select) {
+    const pizzaItem = select.closest(".pizza-item");
+    const priceSpan = pizzaItem.querySelector(".price");
+    const quantity = parseInt(
+      pizzaItem.querySelector(".quantity-control span").textContent
+    );
+
+    const unitPrice = parseFloat(
+      select.options[select.selectedIndex].dataset.price
+    );
+
+    const total = unitPrice * (quantity || 1);
+    priceSpan.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
+  }
+
+
+  function changeQuantity(button, amount) {
+    const pizzaItem = button.closest(".pizza-item");
+    const span = pizzaItem.querySelector(".quantity-control span");
+
+    let value = parseInt(span.textContent) + amount;
+    if (value < 0) value = 0;
+    span.textContent = value;
+
+    const select = pizzaItem.querySelector(".size-select");
+    updatePrice(select);
+  }
+
+
+    function adicionarCarrinho() {
+  // 1. Buscamos todos os blocos de pizza
+  let items = document.querySelectorAll(".pizza-item");
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  
+  let editIndex = localStorage.getItem("editarIndex");
+  if (editIndex !== null) {
+    carrinho.splice(editIndex, 1);
+    localStorage.removeItem("editarIndex");
+  }
+
+  items.forEach((item) => {
+    let qtdElement = item.querySelector(".quantity-control span");
+    let quantidade = qtdElement ? parseInt(qtdElement.textContent) : 0;
+
+    // Só processa se a quantidade for maior que zero
+    if (quantidade > 0) {
+      let nomeElement = item.querySelector(".pizza-name");
+      let selectElement = item.querySelector(".size-select");
+
+      // O "if" abaixo evita o erro de 'textContent' of null
+      if (nomeElement && selectElement) {
+        let nomeSabor = nomeElement.textContent;
+        let tamanho = selectElement.value;
+        let preco = parseFloat(selectElement.options[selectElement.selectedIndex].getAttribute('data-price'));
+
+        carrinho.push({
+          produto: "Pizza",
+          nome: nomeSabor,
+          tamanho: tamanho,
+          quantidade: quantidade,
+          preco: preco,
+          subtotal: quantidade * preco,
+        });
+      }
+    }
+  });
+
+  if (carrinho.length > 0) {
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    window.location.href = "carrinho.html";
+  } else {
+    alert("Por favor, selecione pelo menos uma pizza!");
+  }
+}
+  </script>
+  <script src="utils.js"></script>
+</body>
+</html>

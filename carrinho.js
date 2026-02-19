@@ -33,6 +33,11 @@ function brl(n) {
 }
 
 function descricaoItem(item) {
+  // PIZZA
+  if (item.produto === "Pizza") {
+    return `${item.nome} x${item.quantidade} = R$ ${brl(item.subtotal)}`;
+  }
+
   // HAMBÚRGUER
   if (item.produto === "Hambúrguer") {
     return `${item.nome} x${item.quantidade} = R$ ${brl(item.subtotal)}`;
@@ -132,7 +137,9 @@ function editarItem(index) {
   const item = getCarrinho()[index];
   if (!item) return;
 
-  if (item.produto === "Hambúrguer") {
+  if (item.produto === "Pizza") {
+    window.location.href = "pizzas.html";
+  } else if (item.produto === "Hambúrguer") {
     window.location.href = "hamburguer.html";
   } else if (item.produto === "Acompanhamento") {
     window.location.href = "acompanhamentos.html";

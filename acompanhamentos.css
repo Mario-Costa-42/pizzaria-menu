@@ -33,18 +33,6 @@ body {
   padding-bottom: 10px;
 }
 
-.intro {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: #cfcfcf;
-  margin-bottom: 12px;
-}
-
-.intro.destaque {
-  color: #fff;
-  font-weight: bold;
-}
-
 .free-item {
   display: flex;
   align-items: center;
